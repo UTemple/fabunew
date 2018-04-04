@@ -1,0 +1,5 @@
+1.DeleteCloudTimeoutFiles.prc是Oracle pl/sql过程，作用是删除数据库中超过一周时间的文件转储信息；
+
+2.CreateDeleteJob.sql用于创建一个Oracle pl/sql job，定时每天12点执行，其中调用DeleteCloudTimeoutFiles.prc过程；
+
+3.DeleteCloudTimeoutFiles.bat批处理脚本用于删除转储文件夹下超过一周时间的文件，在windows中可以启动定时任务，让其每天12点调用此批处理脚本。
