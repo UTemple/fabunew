@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">排水管道</label>
+                        <label class="layui-form-label">管道和沟渠</label>
                         <div class="layui-input-block">
                             <div id="drainpipeDiv" runat="server"></div>
                         </div>

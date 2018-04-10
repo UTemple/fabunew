@@ -185,7 +185,7 @@ namespace web.page.user
                                     + ",DRAINPAGE = " + userperDs.Tables[0].Rows[0]["DRAINPAGE"] + ",WATERPAGE = " + userperDs.Tables[0].Rows[0]["WATERPAGE"] 
                                     + ",RIVEROWNER = " + userperDs.Tables[0].Rows[0]["RIVEROWNER"] + ",RESERVOIROWNER = " + userperDs.Tables[0].Rows[0]["RESERVOIROWNER"] 
                                     + ",LAKEOWNER = " + userperDs.Tables[0].Rows[0]["LAKEOWNER"] + ",DRAINPIPE = " + userperDs.Tables[0].Rows[0]["DRAINPIPE"]
-                                    /*+ ",DRAINCANAL = " + userperDs.Tables[0].Rows[0]["DRAINCANAL"]*/ + ",DRAINCOMB = " + userperDs.Tables[0].Rows[0]["DRAINCOMB"]
+                                    + ",DRAINCANAL = " + userperDs.Tables[0].Rows[0]["DRAINPIPE"] + ",DRAINCOMB = " + userperDs.Tables[0].Rows[0]["DRAINCOMB"]
                                     + ",DRAINWELL = " + userperDs.Tables[0].Rows[0]["DRAINWELL"] + ",SGESDOC = " + userperDs.Tables[0].Rows[0]["SGESDOC"]
                                     + " WHERE USERID = " + Request.QueryString["pa"].ToString();
                 }
