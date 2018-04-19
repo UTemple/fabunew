@@ -5,13 +5,14 @@
 //statisticsFields:用于右侧面板中统计的字段配置
 //statType:用于指定统计的类型，分为两种，一种为要素总数(count)，一种为要素某个字段总和(other)
 //sumField:当统计的类型为某个字段总和时，需要配置该项，指定计算总和的字段名称
-//获取token的地址http://192.168.2.55:6080/arcgis/admin/generateToken
+//获取token的地址http://192.168.2.55:6080/arcgis/admin/generateToken，用户名密码是55的arcgis用户名密码
 //使用token的地址http://192.168.2.55:39/ourgis/
+//本地调试使用token的地址http://192.168.2.102/OurgisDebug/
 
 //定义服务链接
 var commandUrl = 'http://192.168.2.55:6080/arcgis/rest/services/';
-var token = '?token=' +'TaP5O_lkqiaiWatl1lLJ14tBTWfhKHktAhtO9BkzADhk_6g3iaFqvR4DM45Z77O-MyvROEUxdkUDnOGCmPDglA..';
-
+var token = '?token=' +'TaP5O_lkqiaiWatl1lLJ14tBTWfhKHktAhtO9BkzADhk_6g3iaFqvR4DM45Z77O-MyvROEUxdkUDnOGCmPDglA..';//2.55的token
+//var token = '?token=' +'6f_s6jYHuH9AqgKXYfYOQdB_zfIR195AybtpZGdFpgL-KLOmgzLDVBEkfJABAdtbyIvapYRoTVFdJ6O9jN9J2A..'//2.102的token
 //定义图层
 var layerConfiguration = {
     baseMap: {
@@ -42,6 +43,26 @@ var layerConfiguration = {
             queryField: ["道路名"],
             statisticsFields: {},
             statType: 'other',
+            sumField: null
+        },
+        jiancedian: {
+            name: '监测点',
+            addToMap: true,
+            visitflag: false,
+            //queryflag 0-不查 1-查询 3-跟随自身visible 4-跟随其他followvisit
+            queryflag: 3,
+            followvisit: "",
+            minScale: 0,
+            maxScale: 0,
+            url: commandUrl + "QuanLiuYu/jiancedian/MapServer/0" + token,
+            type: "point",
+            titleField: 'STNM',
+            outFields:["OBJECTID","STCD","STOCD","STNM","STTP","STSUBTP","STSYS","MNIT","DATASOURCE","STLC","STDSP","STARTYEAR","ENDYEAR","ADDVCD","USFL","LGTD","LTTD","COOX","COOY","RVNM","BSNM","COMMENTS","MODITIME","REM_GZ","COLM_GZ","ATID","HUANBAO","ST_PPTN_T","ST_HDRST_T","ST_PPTN_R","ST_RIVER_R","ST_RSVR_R","ST_WAS_R","ST_PUMP_R","ST_RVWR_R","ST_SOIL_R","ST_CANAL_R","ST_CONDUIT_R_1","ST_CONDUIT_R_2","ST_SURDEP_R","WQ_DAYSTAT_S_1","WQ_DAYSTAT_S_2","WQ_HYDROE_D_1","WQ_HYDROE_D_2","WQ_NMISP_D","WQ_PCP_D"],
+            displayFields:["OBJECTID","测站编码","原系统对应测站编码","测站名称","测站类别","测站子类别","测站所属系统","检测项目","来源单位","所在地址","测站简介","投入使用年份","停止使用年份","行政区划码","启用标志位","经度","纬度","X坐标","Y坐标","所属河流","所属流域","备注","时间戳","数据说明","采集方式","流水号","环保局","三防办遥测雨量","三防办遥测水位","三防办雨量","三防办河道水位","三防办水库水位","三防办堰闸水位","三防办泵站水位","三防办拦河坝水位","三防办墒情","三防办渠道水位","三防办排水管道水位","三防办排水管道流速","三防办积水点水位","监测站污水厂进出口水质_1","监测站污水厂进出口流量_1","监测站黑臭河涌水位","监测站污水厂进出口流量_2","监测站黑臭河涌水质_1+污水厂进出口水质_2","监测站黑臭河涌水质_2+污水厂进出口水质_3"],
+            dateFields: ["时间戳"],
+            queryField: ['OBJECTID', "STNM", "STCD", "STOCD", "MNIT"],
+            statisticsFields: {},
+            statType: 'count',
             sumField: null
         },
         hechong: {
@@ -450,28 +471,28 @@ var layerConfiguration = {
             statType: 'count',
             sumField: null
         },
-        jiancedian: {
-            name: '监测点',
-            addToMap: true,
-            visitflag: false,
-            //queryflag 0-不查 1-查询 3-跟随visible 4-跟随其他followvisit
-            queryflag: 4,
-            followvisit: "paishuiLayer",
-            minScale: 1000,
-            maxScale: 0,
-            url: commandUrl + "QuanLiuYu/paishui/MapServer/11" + token,
-            type: "point",
-            titleField: 'NAME',
-            outFields: ["USID", "FCODE", "SEWAGESYSTEM_ID", "RAINESYSTEM_ID", "DISTRICT", "PROJECT_NAME", "OWNERDEPT", "MANAGEDEPT", "STATE", "FINISH_DATE", "NAME", "DRAINMETRY_ID", "ADDR", "DESCRIPTIO", "TYPE", "METHOD", "DEVICE", "SORT", "X", "Y", "REPAIR_DATE", "REPAIR_COMPANY", "DATA_ORIGIN", "REMARK"],
-            displayFields: ["标识码", "要素代码", "所在污水系统", "所在雨水系统", "行政区划", "所属工程名称", "权属单位", "管理单位", "设施状态", "竣工日期", "监测点名称", "监测点编号", "地址", "监测点描述", "监测类别", "监测方式", "监测点设备", "监测点类型", "坐标X", "坐标Y", "调查日期", "调查单位", "数据来源", "备注"],
-            dateFields: ["竣工日期", "调查日期"],
-            queryField: ['USID', 'NAME', 'DISTRICT'],
-            statisticsFields: {
-                'DISTRICT': '行政区'
-            },
-            statType: 'count',
-            sumField: null
-        },
+        //jiancedian: {
+        //    name: '监测点',
+        //    addToMap: true,
+        //    visitflag: false,
+        //    //queryflag 0-不查 1-查询 3-跟随visible 4-跟随其他followvisit
+        //    queryflag: 4,
+        //    followvisit: "paishuiLayer",
+        //    minScale: 1000,
+        //    maxScale: 0,
+        //    url: commandUrl + "QuanLiuYu/paishui/MapServer/11" + token,
+        //    type: "point",
+        //    titleField: 'NAME',
+        //    outFields: ["USID", "FCODE", "SEWAGESYSTEM_ID", "RAINESYSTEM_ID", "DISTRICT", "PROJECT_NAME", "OWNERDEPT", "MANAGEDEPT", "STATE", "FINISH_DATE", "NAME", "DRAINMETRY_ID", "ADDR", "DESCRIPTIO", "TYPE", "METHOD", "DEVICE", "SORT", "X", "Y", "REPAIR_DATE", "REPAIR_COMPANY", "DATA_ORIGIN", "REMARK"],
+        //    displayFields: ["标识码", "要素代码", "所在污水系统", "所在雨水系统", "行政区划", "所属工程名称", "权属单位", "管理单位", "设施状态", "竣工日期", "监测点名称", "监测点编号", "地址", "监测点描述", "监测类别", "监测方式", "监测点设备", "监测点类型", "坐标X", "坐标Y", "调查日期", "调查单位", "数据来源", "备注"],
+        //    dateFields: ["竣工日期", "调查日期"],
+        //    queryField: ['USID', 'NAME', 'DISTRICT'],
+        //    statisticsFields: {
+        //        'DISTRICT': '行政区'
+        //    },
+        //    statType: 'count',
+        //    sumField: null
+        //},
         paimen: {
             name: '拍门',
             addToMap: true,

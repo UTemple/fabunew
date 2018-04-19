@@ -11788,7 +11788,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>18033</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/web</IISUrl>
+          <IISUrl>http://localhost/OurgisDebug</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

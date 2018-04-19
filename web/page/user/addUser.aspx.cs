@@ -83,14 +83,14 @@ namespace web.page.user
             else if (permission == "高级用户")
             {
                 permission = "0,2,0,0,0,2,2,2,2,2,2,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1";
-                if (department == "水工建筑二所")
+                if (department == "水工建筑二所")//如果该高级用户是水工建筑二所的，则对水工二所部门文件有全部权限
                     permission += ",2";
                 else permission += ",0";
             }    
             else if (permission == "普通用户")
             {
                 permission = "0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1";
-                if (department == "水工建筑二所")
+                if (department == "水工建筑二所")//如果该普通用户是水工建筑二所的，则对水工二所部门文件有读取上传下载权限
                     permission += ",1";
                 else permission += ",0";
             }

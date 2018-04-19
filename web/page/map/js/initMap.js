@@ -109,7 +109,10 @@ function initMap(Map) {
     map.addLayer( paishuiLayer );
 
     jietubiaoLayer = new esri.layers.ArcGISDynamicMapServiceLayer( layerConfiguration.baseMap.jietubiao, { visible: false, id: "jietubiaoLayer" } );
-    map.addLayer( jietubiaoLayer );
+    map.addLayer(jietubiaoLayer);
+
+    //jiancedianLayer = new esri.layers.ArcGISDynamicMapServiceLayer(layerConfiguration.baseMap.jiancedian, { visible: false, id: "jiancedianLayer" });
+    //map.addLayer(jiancedianLayer);
 
     //paishuidianLayer = new esri.layers.ArcGISDynamicMapServiceLayer(layerConfiguration.baseMap.paishuidian, { visible: false, id: "paishuidianLayer" });
     //map.addLayer(paishuidianLayer);
