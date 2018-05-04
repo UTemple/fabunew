@@ -180,3 +180,13 @@ function locateFeature(graphic) {
         //map.infoWindow.reposition();
     }
 }
+
+//根据点的X，Y定位到地图上指定位置
+function locateCoordinatePoint(X, Y) {
+    var centerpoint = new esri.geometry.Point(X, Y, new esri.SpatialReference(wkt));
+    map.setScale(500);
+    map.centerAt(centerpoint);
+    map.infoWindow.setTitle("广州城建坐标");
+    map.infoWindow.setContent("X:" + X + " | Y:" + Y);
+    map.infoWindow.show(centerpoint);
+}

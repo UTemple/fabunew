@@ -58,6 +58,8 @@
     <!--JS src块-->
 </head>
 <body>
+    <!--使客户端能够直接调用服务器端页面方法-->
+    <!--<asp:ScriptManager ID="sm" EnablePageMethods="true" runat="server" />-->
     <!--地图及功能控件-->
     <div id="wrapper">
         <!-- 地图显示 -->
@@ -66,6 +68,15 @@
         <div id="coorDiv" style="position: absolute; bottom: 18px; z-index: 1000; margin-left: 10px;"></div>
         <div id="scaleDiv" style="position: absolute; bottom: 1px; z-index: 1000; margin-left: 10px;"></div>
         <!--显示比例尺及坐标-->
+        <div id="goposition" style="position: absolute; bottom:55px;margin-left:10px">
+            <div id="inputCoordinate" style="padding-bottom:2px">
+                <p>经度：</p>
+                <input id="inputLongitude" class="searchbox-content-common" type="text" name="longitude" autocomplete="off" maxlength="20" placeholder="请输入经度" value="" />
+                <p>纬度：</p>
+                <input id="inputLatitude" class="searchbox-content-common" type="text" name="latitude" autocomplete="off" maxlength="20" placeholder="请输入纬度" value="" />
+            </div>
+            <button id="gopos-button" type="button">定位</button>
+        </div>
         <!-- 地图显示-->
         <!--搜索条-->
         <div id="search" style="position: absolute; top:5px;margin-left: 55px">
@@ -86,17 +97,17 @@
         <div id="selectLayer" style="top: 44px; margin-left: 55px">
             <!--搜索项目框-->
             <!--            <div class="layerStyle clear">
-                        <p>选择图层</p>
-                        <ul>
-                            <li class="highlight"><a class="all" href="#" onclick="allBtnClick()">全部</a></li>
-                            <li><a class="heicong" href="#" onclick="showHeChongPanel()">河流(涌)</a></li>
-                            <li><a class="shuizha" href="#" onclick="showShuiZhaPanel()">水闸</a></li>
-                            <li><a class="bengzhan" href="#" onclick="showBengZhanPanel()">泵站</a></li>
-                            <li><a class="difang" href="#" onclick="showDiFangPanel()">堤防</a></li>
-                            <li><a class="shuiku" href="#" onclick="showShuiKuPanel()">水库</a></li>
-                            <li><a class="interestPoint" href="#" onclick="showInterestPointPanel()">兴趣点</a></li>
-                        </ul>
-                    </div>-->
+                    <p>选择图层</p>
+                    <ul>
+                        <li class="highlight"><a class="all" href="#" onclick="allBtnClick()">全部</a></li>
+                        <li><a class="heicong" href="#" onclick="showHeChongPanel()">河流(涌)</a></li>
+                        <li><a class="shuizha" href="#" onclick="showShuiZhaPanel()">水闸</a></li>
+                        <li><a class="bengzhan" href="#" onclick="showBengZhanPanel()">泵站</a></li>
+                        <li><a class="difang" href="#" onclick="showDiFangPanel()">堤防</a></li>
+                        <li><a class="shuiku" href="#" onclick="showShuiKuPanel()">水库</a></li>
+                        <li><a class="interestPoint" href="#" onclick="showInterestPointPanel()">兴趣点</a></li>
+                    </ul>
+                </div>-->
             <!--搜索项目框-->
             <!--搜索结果TAB条-->
             <div class="infoPanel">

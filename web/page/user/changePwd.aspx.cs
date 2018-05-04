@@ -27,11 +27,11 @@ namespace web.page.user
             string oldPassword = Request.QueryString["oldpwd"];
             string newPassword = Request.QueryString["newpwd"];
             string confirmPassword = Request.QueryString["confirmpwd"];
-            if (oldPassword != null && newPassword != null && newPassword != null)
+            if (oldPassword != null && newPassword != null && confirmPassword != null)
             {
                 if (oldPassword != ds.Tables[0].Rows[0]["PASSWORD"].ToString())
                 {
-                    chpwdendDiv.InnerHtml = "<script>layui.use('layer', function(){var layer = layui.layer;layer.msg('原密码错误', {icon: 5,time: 5000,area: '300',btnAlign: 'c',btn: ['确认']});});</script>";
+                    chpwdendDiv.InnerHtml = "<script>layui.use('layer', function(){var layer = layui.layer;layer.msg('旧密码错误', {icon: 5,time: 5000,area: '300',btnAlign: 'c',btn: ['确认']});});</script>";
                     return;
                 }
                 if (newPassword != confirmPassword)

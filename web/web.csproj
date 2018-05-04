@@ -92,6 +92,10 @@
     <Content Include="json\systemParameter.json" />
     <Content Include="json\userface.json" />
     <Content Include="json\usersList.json" />
+    <Content Include="page\coordinateconvert\WGSConvert2GZ.aspx" />
+    <Content Include="page\coordinateconvert\wgsconvert2gz.js" />
+    <Content Include="page\coordinateconvert\WGSConvert2GZTempletDl.aspx" />
+    <Content Include="page\coordinateconvert\WGStoGZJSService.aspx" />
     <Content Include="page\deptdocspace\DeptFiles.js" />
     <Content Include="page\deptdocspace\DeptFilesDownload.aspx" />
     <Content Include="page\deptdocspace\DeptFilesList.aspx" />
@@ -11456,6 +11460,27 @@
     </Compile>
     <Compile Include="json\userList.aspx.designer.cs">
       <DependentUpon>userList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGSConvert2GZ.aspx.cs">
+      <DependentUpon>WGSConvert2GZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGSConvert2GZ.aspx.designer.cs">
+      <DependentUpon>WGSConvert2GZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGSConvert2GZTempletDl.aspx.cs">
+      <DependentUpon>WGSConvert2GZTempletDl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGSConvert2GZTempletDl.aspx.designer.cs">
+      <DependentUpon>WGSConvert2GZTempletDl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGStoGZJSService.aspx.cs">
+      <DependentUpon>WGStoGZJSService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\coordinateconvert\WGStoGZJSService.aspx.designer.cs">
+      <DependentUpon>WGStoGZJSService.aspx</DependentUpon>
     </Compile>
     <Compile Include="page\deptdocspace\DeptFilesDownload.aspx.cs">
       <DependentUpon>DeptFilesDownload.aspx</DependentUpon>

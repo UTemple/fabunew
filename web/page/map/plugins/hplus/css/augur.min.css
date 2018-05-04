@@ -15,6 +15,21 @@ input{outline:none;}
 #search{width:335px;border-radius:2px;background:#fff;position:absolute;top:20px;z-index:1000;box-shadow: 1px 2px 1px rgba(0,0,0,.15);}
 #inputBox{width:80%;overflow:hidden;height:36px;display:inline-block;}
 #sole-input {box-sizing: border-box;border: 0;padding: 9px 0;line-height: 20px;text-indent:20px;width:80%;font-size: 16px;height: 38px;color: #333;position: relative;border-radius: 2px 0 0 2px;}
+#inputLongitude, #inputLatitude {
+    border: 1px solid #24c3ad;
+    text-indent: 5px;
+    width: 60%;
+    font-size: 12px;
+    height: 24px;
+    position: relative;
+    border-radius: 2px 0 0 2px;
+}
+#gopos-button {
+    background: #24c3ad;
+    border-radius: 0 2px 2px 0;
+    border: 0.5px;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.15);
+}
 #search-button {pointer-events: auto;background: url(../img/searchbox.png) no-repeat 0 -76px #3385ff;width: 57px;height: 38px;float: right;border: 0;padding: 0;cursor: pointer;border-radius: 0 2px 2px 0;box-shadow: 1px 2px 1px rgba(0,0,0,.15);}
 #selectLayer{width:315px;background:#fff;position:absolute;top:114px;z-index:1000;padding:0.6em;display:none;box-shadow: 1px 2px 1px rgba(0,0,0,.15);}
 #selectLayer .layerStyle p{font-size:16px;color:#444;}

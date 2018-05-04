@@ -32,7 +32,7 @@ namespace web.page.recinfo
             //    }
             //}
             //从config.xlsx中获取数据库表空间名称
-            DataTable rivertb = QuaryExcel("SELECT SLG_RV_PO_S FROM [SPACENAME$]").Tables[0];
+            DataTable rivertb = QuaryExcel("SELECT SLG_RV_PO_S FROM [GLOBALCONFIG$]").Tables[0];
             if(rivertb.Rows.Count > 0)
             {
                 tablespacestr = rivertb.Rows[0]["SLG_RV_PO_S"].ToString();

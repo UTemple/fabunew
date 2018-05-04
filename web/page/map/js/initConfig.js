@@ -11,8 +11,8 @@
 
 //定义服务链接
 var commandUrl = 'http://192.168.2.55:6080/arcgis/rest/services/';
-var token = '?token=' +'TaP5O_lkqiaiWatl1lLJ14tBTWfhKHktAhtO9BkzADhk_6g3iaFqvR4DM45Z77O-MyvROEUxdkUDnOGCmPDglA..';//2.55的token
-//var token = '?token=' +'6f_s6jYHuH9AqgKXYfYOQdB_zfIR195AybtpZGdFpgL-KLOmgzLDVBEkfJABAdtbyIvapYRoTVFdJ6O9jN9J2A..'//2.102的token
+//var token = '?token=' +'TaP5O_lkqiaiWatl1lLJ14tBTWfhKHktAhtO9BkzADhk_6g3iaFqvR4DM45Z77O-MyvROEUxdkUDnOGCmPDglA..';//2.55的token
+var token = '?token=' +'6f_s6jYHuH9AqgKXYfYOQdB_zfIR195AybtpZGdFpgL-KLOmgzLDVBEkfJABAdtbyIvapYRoTVFdJ6O9jN9J2A..'//2.102的token
 //定义图层
 var layerConfiguration = {
     baseMap: {
