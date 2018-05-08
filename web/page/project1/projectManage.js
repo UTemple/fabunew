@@ -7,6 +7,35 @@
         element = layui.element();
     $ = layui.jquery;
 
+    //增加对醒目信息框是否变化的监听
+    var proinfos = document.getElementsByClassName("proinfo");
+    if (proinfos.length > 0)
+    {
+        for (var i = 0; i < proinfos.length; i++)
+        {
+            proinfos[i].addEventListener("input", function () {
+                $("#dydiv").css("display", "");
+                }, false);
+            proinfos[i].addEventListener("focus", function (e) {
+                $(e.target).css("background-color", "white");
+            }, false);
+            proinfos[i].addEventListener("blur", function (e) {
+                $(e.target).css("background-color", "#d2d2d2");
+            }, false);
+        }
+    }
+    
+    //修改项目信息表单提交处理
+    form.on("submit(changeProjectInfo)", function () {
+        var tmp = document.getElementById("xmbh1");
+        document.getElementById("xmbh").value = tmp.innerHTML;
+        document.getElementById("xzq").value = document.getElementById("xzq1").innerHTML;
+        document.getElementById("sshl").value = document.getElementById("sshl1").innerHTML;
+        document.getElementById("xmwz").value = document.getElementById("xmwz1").innerHTML;
+        document.getElementById("yzdw").value = document.getElementById("yzdw1").innerHTML;
+        //form.submit();
+    })
+
     //加载页面数据
     var projectData = '';
     $.get("./projectList.aspx", function (data) {

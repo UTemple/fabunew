@@ -12,6 +12,10 @@ form input.layui-input[disabled]{ background:#f2f2f2; color:#595963!important; }
 /*修改密码*/
 .changePwd{ width:30%; margin:3% 0 0 5%; }
 
+/*修改密码*/
+.proinfo {
+    padding:3px;
+}
 
 /*适配*/
 @media screen and (max-width:1050px){

@@ -25,16 +25,31 @@
     <div>
         <div id="proTitleDiv" runat="server"></div>
         <div style="position:absolute;float:left;width:20%"></div>
-        <div style="position:absolute;float:left;left:20%;width:60%">
-            <table class="layui-table">
-                <%--<colgroup>
-                    <col width="30%" />
-                    <col />
-                </colgroup>--%>
-                <tbody id="proinfo_body" runat="server"></tbody>
-            </table>
-        </div>
+        <form id="form1" runat="server">
+            <div style="position:absolute;float:left;left:20%;width:60%">
+                <table class="layui-table">
+                    <%--<colgroup>
+                        <col width="30%" />
+                        <col />
+                    </colgroup>--%>
+                    <tbody id="proinfo_body" runat="server"></tbody>
+                </table>
+                <input type="hidden" name="xmbh" id="xmbh" />
+                <input type="hidden" name="xzq" id="xzq" />
+                <input type="hidden" name="sshl" id="sshl" />
+                <input type="hidden" name="xmwz" id="xmwz" />
+                <input type="hidden" name="yzdw" id="yzdw" />
+                <div id="dydiv" class="layui-form-item" style="text-align:center;display:none">
+		            <div class="layui-input-block" style="margin-left:0px">
+		    	        <button class="layui-btn" lay-submit="" lay-filter="changeProjectInfo">保存修改</button>
+		            </div>
+		        </div>
+            </div>
+        </form>
         <div style="position:absolute;float:right;width:20%"></div>
     </div>
+    <script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+	<script type="text/javascript" src="projectManage.js"></script>
+    <div id="chproendDiv" runat="server"></div>
 </body>
 </html>
